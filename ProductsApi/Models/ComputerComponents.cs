@@ -6,7 +6,7 @@ namespace ProductsApi.Models
     [Table("ComputerComponent")]
     public class ComputerComponents
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Cpu { get; set; }
         public int TdpCpu { get; set; }
         public string Gpu { get; set; }
