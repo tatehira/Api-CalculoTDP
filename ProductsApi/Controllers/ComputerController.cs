@@ -85,8 +85,8 @@ namespace ProductsApi.Controllers
         private int CalculateTDP(ComputerComponents computerComponents)
         {
             int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu +
-                           computerComponents.TdpMotherboard + computerComponents.TdpRam +
-                           computerComponents.TdpSSD + computerComponents.TdpHDD;
+                           computerComponents.TdpMotherboard + computerComponents.TdpSSD + 
+                           computerComponents.TdpHDD + (computerComponents.TdpRam * computerComponents.QntRam);
 
             return totalTdp;
         }
@@ -94,9 +94,9 @@ namespace ProductsApi.Controllers
         #endregion Regas
 
         #region Validation
-        public Task<IActionResult> Validation(ComputerComponents computerComponents)
+        private Task<IActionResult> Validation(ComputerComponents computerComponents)
         {
-            if (string.IsNullOrEmpty(computerComponents.Cpu))
+            if (computerComponents.Cpu == null)
                 return Task.FromResult<IActionResult>(BadRequest("O processador é obrigatório! "));
 
             return Task.FromResult<IActionResult>(Ok());
