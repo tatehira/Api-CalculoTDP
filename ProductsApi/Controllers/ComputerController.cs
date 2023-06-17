@@ -17,6 +17,18 @@ namespace ProductsApi.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        [Route("api/computer/{id}")]
+        public async Task<ActionResult<ComputerComponents>> GetComputer(int id)
+        {
+            ComputerComponents aComputer = await _context.Computers.FindAsync(id);
+
+            if (aComputer == null)
+                return NotFound();
+
+            return Ok(aComputer);
+        }
+
         [HttpPost]
         [Route("api/computers")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
