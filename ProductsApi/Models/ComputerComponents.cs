@@ -20,6 +20,7 @@ namespace ProductsApi.Models
         public int TdpSSD { get; set; }
         public string HDD { get; set; }
         public int TdpHDD { get; set; }
+        public int TdpTotal { get;  set; }
     }
 
     public enum SSDCategory

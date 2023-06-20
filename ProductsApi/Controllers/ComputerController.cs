@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductsApi.Data;
 using ProductsApi.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace ProductsApi.Controllers
 {
@@ -11,28 +12,34 @@ namespace ProductsApi.Controllers
     [ApiController]
     public class ComputerController : ControllerBase
     {
+        #region CRUD
         private readonly ComputerContext _context;
         public ComputerController(ComputerContext context)
         {
             _context = context;
         }
 
-        [HttpGet]
-        [Route("api/computer/{id}")]
-        public async Task<ActionResult<ComputerComponents>> GetComputer(int id)
-        {
-            ComputerComponents aComputer = await _context.Computers.FindAsync(id);
+        //[HttpGet]
+        //[Route("api/computer/{id}")]
+        //public async Task<ActionResult<ComputerComponents>> GetComputer(int id)
+        //{
+        //    ComputerComponents aComputer = await _context.Computers.FindAsync(id);
 
-            if (aComputer == null)
-                return NotFound();
+        //    if (aComputer == null)
+        //        return NotFound();
 
-            return Ok(aComputer);
-        }
+        //    return Ok(aComputer);
+        //}
 
         [HttpPost]
         [Route("api/computers")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
         {
+            int calculatedTdp = CalculateTDP(computerComponents);
+            computerComponents.TdpTotal = calculatedTdp;
+
+            await Validation(computerComponents);
+
             await _context.Computers.AddAsync(computerComponents);
 
             await _context.SaveChangesAsync();
@@ -44,7 +51,7 @@ namespace ProductsApi.Controllers
         [Route("api/computer")]
         public async Task<ActionResult> UpdateComputer(ComputerComponents computerComponents)
         {
-            var dbComputer = await _context.Computers.FindAsync(computerComponents.Id);
+            ComputerComponents dbComputer = await _context.Computers.FindAsync(computerComponents.Id);
 
             if (dbComputer == null)
                 return NotFound();
@@ -60,7 +67,7 @@ namespace ProductsApi.Controllers
         [Route("api/computer")]
         public async Task<ActionResult> DeleteComputer(int id)
         {
-            var dbComputer = await _context.Computers.FindAsync(id);
+            ComputerComponents dbComputer = await _context.Computers.FindAsync(id);
 
             if (dbComputer == null)
                 return NotFound();
@@ -71,5 +78,29 @@ namespace ProductsApi.Controllers
 
             return NoContent();
         }
+        #endregion CRUD
+
+        #region Regas
+
+        private int CalculateTDP(ComputerComponents computerComponents)
+        {
+            int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu +
+                           computerComponents.TdpMotherboard + computerComponents.TdpSSD + 
+                           computerComponents.TdpHDD + (computerComponents.TdpRam * computerComponents.QntRam);
+
+            return totalTdp;
+        }
+
+        #endregion Regas
+
+        #region Validation
+        private Task<IActionResult> Validation(ComputerComponents computerComponents)
+        {
+            if (computerComponents.Cpu == null)
+                return Task.FromResult<IActionResult>(BadRequest("O processador é obrigatório! "));
+
+            return Task.FromResult<IActionResult>(Ok());
+        }
+        #endregion Validation
     }
 }
