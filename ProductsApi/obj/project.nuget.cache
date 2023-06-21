@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gwOYCRR3mzGREfRk0E1EmSWZvnav2QUGvn7lWRTWAvtxm/ezXgzqk5eRXJeUIQf4BU2fM8krzLBYCKsEwO+vZw==",
+  "dgSpecHash": "x0Xv/1RIzMxJ9+OCuWR4unRcD3x73DISDcTvvzQVL/fT8SoMMtBCEQ6tEiD5Cl2Maq6oo9M4qfBif0MRfGzaag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wendrew.nick\\Music\\1- Nick Arquivos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+  "projectFilePath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wendrew.nick\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\wendrew.nick\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

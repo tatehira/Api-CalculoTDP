@@ -5,7 +5,7 @@
 namespace ProductsApi.Migrations
 {
     /// <inheritdoc />
-    public partial class firstmigration : Migration
+    public partial class PrimaryLBR : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,7 +28,8 @@ namespace ProductsApi.Migrations
                     SSD = table.Column<int>(type: "int", nullable: false),
                     TdpSSD = table.Column<int>(type: "int", nullable: false),
                     HDD = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TdpHDD = table.Column<int>(type: "int", nullable: false)
+                    TdpHDD = table.Column<int>(type: "int", nullable: false),
+                    TdpTotal = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

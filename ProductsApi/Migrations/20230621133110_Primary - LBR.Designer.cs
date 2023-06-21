@@ -11,8 +11,8 @@ using ProductsApi.Data;
 namespace ProductsApi.Migrations
 {
     [DbContext(typeof(ComputerContext))]
-    [Migration("20230617053208_first-migration")]
-    partial class firstmigration
+    [Migration("20230621133110_Primary - LBR")]
+    partial class PrimaryLBR
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,6 +69,9 @@ namespace ProductsApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("TdpSSD")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpTotal")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

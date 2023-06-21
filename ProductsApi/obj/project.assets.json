@@ -4094,11 +4094,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wendrew.nick\\Music\\1- Nick Arquivos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+      "projectUniqueName": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
       "projectName": "ProductsApi",
-      "projectPath": "C:\\Users\\wendrew.nick\\Music\\1- Nick Arquivos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+      "projectPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
       "packagesPath": "C:\\Users\\wendrew.nick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wendrew.nick\\Music\\1- Nick Arquivos\\Api-CalculoTDP\\ProductsApi\\obj\\",
+      "outputPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wendrew.nick\\AppData\\Roaming\\NuGet\\NuGet.Config",

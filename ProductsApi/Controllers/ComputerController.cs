@@ -1,10 +1,7 @@
 ﻿using Mapster;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ProductsApi.Data;
 using ProductsApi.Models;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 
 namespace ProductsApi.Controllers
 {
@@ -87,7 +84,6 @@ namespace ProductsApi.Controllers
             int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu +
                            computerComponents.TdpMotherboard + computerComponents.TdpSSD + 
                            computerComponents.TdpHDD + (computerComponents.TdpRam * computerComponents.QntRam);
-
             return totalTdp;
         }
 
