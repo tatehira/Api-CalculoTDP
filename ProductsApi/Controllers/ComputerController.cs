@@ -16,32 +16,38 @@ namespace ProductsApi.Controllers
             _context = context;
         }
 
-        //[HttpGet]
-        //[Route("api/computer/{id}")]
-        //public async Task<ActionResult<ComputerComponents>> GetComputer(int id)
-        //{
-        //    ComputerComponents aComputer = await _context.Computers.FindAsync(id);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ComputerComponents>> GetComputer(int id)
+        {
+            ComputerComponents aComputer = await _context.Computers.FindAsync(id);
 
-        //    if (aComputer == null)
-        //        return NotFound();
+            if (aComputer == null)
+                return NotFound();
 
-        //    return Ok(aComputer);
-        //}
+            return Ok(aComputer);
+        }
 
         [HttpPost]
         [Route("api/computers")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
         {
-            int calculatedTdp = CalculateTDP(computerComponents);
-            computerComponents.TdpTotal = calculatedTdp;
+            try
+            {
+                int calculatedTdp = CalculateTDP(computerComponents);
+                computerComponents.TdpTotal = calculatedTdp;
 
-            await Validation(computerComponents);
+                Validation(computerComponents);
 
-            await _context.Computers.AddAsync(computerComponents);
+                await _context.Computers.AddAsync(computerComponents);
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-            return Ok(computerComponents);
+                return Ok(computerComponents);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro no processamento! ");
+            }
         }
 
         [HttpPut]
@@ -90,12 +96,10 @@ namespace ProductsApi.Controllers
         #endregion Regas
 
         #region Validation
-        private Task<IActionResult> Validation(ComputerComponents computerComponents)
+        private void Validation(ComputerComponents computerComponents)
         {
             if (computerComponents.Cpu == null)
-                return Task.FromResult<IActionResult>(BadRequest("O processador é obrigatório! "));
-
-            return Task.FromResult<IActionResult>(Ok());
+                throw new ArgumentException("Processador obrigatório! ");
         }
         #endregion Validation
     }

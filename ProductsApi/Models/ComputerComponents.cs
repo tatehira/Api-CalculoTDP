@@ -16,16 +16,23 @@ namespace ProductsApi.Models
         public string Ram { get; set; }
         public int TdpRam { get; set; }
         public int QntRam { get; set; }
-        public SSDCategory SSD { get; set; }
         public int TdpSSD { get; set; }
         public string HDD { get; set; }
         public int TdpHDD { get; set; }
-        public int TdpTotal { get;  set; }
-    }
+        public int TdpTotal { get; set; }
 
-    public enum SSDCategory
+        public SSDType SSD { get; set; }
+        public RotuloCategory RotuloCategory { get; set; }
+    }
+    public enum SSDType
     {
         Sata = 0,
         Nvme = 1,
+    }
+
+    public enum RotuloCategory
+    {
+        Upgrade = 0,
+        Novo = 1,
     }
 }
