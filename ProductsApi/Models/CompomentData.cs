@@ -69,7 +69,8 @@ namespace ProductsApi.Models
             // Lista SSDs e HD
             new ComputerComponents { SSD = SSDType.Sata, TdpSSD = 3 },
             new ComputerComponents { SSD = SSDType.Nvme, TdpSSD = 5 },
-            new ComputerComponents { HDD = HDDType, TdpHDD = 8 },
+            new ComputerComponents { HDD = HDDType.HDDDesktop, TdpHDD = 8 },
+            new ComputerComponents { HDD = HDDType.HDDNotebook, TdpHDD = 5 },
 
             //Lista de placas mãe
             new ComputerComponents { Motherboard = "Micro ATX", TdpMotherboard = 8 },
