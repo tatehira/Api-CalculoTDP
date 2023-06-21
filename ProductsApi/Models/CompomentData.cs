@@ -2,8 +2,9 @@
 {
     public static class CompomentData
     {
-        public static List<ComputerComponents> ProcessorList { get; set; } = new List<ComputerComponents>
+        public static List<ComputerComponents> ProcessorTdpList { get; set; } = new List<ComputerComponents>
         {
+            // Lista de processadores
             new ComputerComponents { Cpu = "Intel Core i9-11900K", TdpCpu = 125 },
             new ComputerComponents { Cpu = "Intel Core i7-11700K", TdpCpu = 125 },
             new ComputerComponents { Cpu = "Intel Core i5-11600K", TdpCpu = 125 },
@@ -35,6 +36,7 @@
             new ComputerComponents { Cpu = "Intel Core i5-10400", TdpCpu = 65 },
             new ComputerComponents { Cpu = "Intel Core i7-9700KF", TdpCpu = 95 },
             new ComputerComponents { Cpu = "Xeon E3-1220 v3", TdpCpu = 80 },
+            new ComputerComponents { Cpu = "Xeon E3-1230 v3", TdpCpu = 80 },
             new ComputerComponents { Cpu = "Xeon E5-2620 v4", TdpCpu = 85 },
             new ComputerComponents { Cpu = "Xeon E5-1650 v3", TdpCpu = 140 },
             new ComputerComponents { Cpu = "Xeon E5-2680 v4", TdpCpu = 120 },
@@ -43,8 +45,32 @@
             new ComputerComponents { Cpu = "Xeon E3-1230 v3", TdpCpu = 80 },
             new ComputerComponents { Cpu = "Xeon E5-2630 v4", TdpCpu = 85 },
             new ComputerComponents { Cpu = "Xeon E5-1660 v3", TdpCpu = 140 },
-            new ComputerComponents { Cpu = "Xeon E5-2683 v4", TdpCpu = 120 }
+            new ComputerComponents { Cpu = "Xeon E5-2683 v4", TdpCpu = 120 },
+
+            // Lista de placas de video
+            new ComputerComponents { Gpu = "NVIDIA GeForce RTX 3090", TdpGpu = 350 },
+            new ComputerComponents { Gpu = "NVIDIA GeForce RTX 3080", TdpGpu = 320 },
+            new ComputerComponents { Gpu = "AMD Radeon RX 6800 XT", TdpGpu = 300 },
+            new ComputerComponents { Gpu = "NVIDIA GeForce RTX 3070", TdpGpu = 220 },
+            new ComputerComponents { Gpu = "AMD Radeon RX 6700 XT", TdpGpu = 230 },
+            new ComputerComponents { Gpu = "NVIDIA GeForce RTX 3060 Ti", TdpGpu = 200 },
+            new ComputerComponents { Gpu = "AMD Radeon RX 6600 XT", TdpGpu = 160 },
+            new ComputerComponents { Gpu = "NVIDIA GeForce RTX 2080 Ti", TdpGpu = 250 },
+            new ComputerComponents { Gpu = "AMD Radeon RX 5700 XT", TdpGpu = 225 },
+            new ComputerComponents { Gpu = "NVIDIA GeForce GTX 1660 Super", TdpGpu = 125 },
+            new ComputerComponents { Gpu = "AMD Radeon RX 5600 XT", TdpGpu = 150 },
+
+            // Lista SSDs e HD
+            new ComputerComponents { SSD = SSDType.Sata, TdpSSD = 3 },
+            new ComputerComponents { SSD = SSDType.Nvme, TdpSSD = 5 },
+            new ComputerComponents { HDD = "HD Mecânico", TdpHDD = 8 },
+
+            //Lista de placas mãe
+            new ComputerComponents { Motherboard = "Micro ATX", TdpMotherboard = 8 },
+            new ComputerComponents { Motherboard = "Mini ITX", TdpMotherboard = 6 },
+            new ComputerComponents { Motherboard = "ATX", TdpMotherboard = 10 },
+            new ComputerComponents { Motherboard = "Extended ATX", TdpMotherboard = 12 }
         };
-        
+       
     }
 }

@@ -10,7 +10,8 @@ namespace ProductsApi.Controllers
     public class ComputerController : ControllerBase
     {
         #region CRUD
-        private readonly ComputerContext _context;
+        private readonly ComputerContext _context;   
+
         public ComputerController(ComputerContext context)
         {
             _context = context;
