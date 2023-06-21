@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Data;
 using ProductsApi.Models;
+using ProductsApi.Models.Enums;
 
 namespace ProductsApi.Controllers
 {
@@ -104,15 +105,26 @@ namespace ProductsApi.Controllers
 
             return Ok(GPUInfo);
         }
+
+        [HttpGet]
+        [Route("Api/MotherboardTdp")]
+        public ActionResult<ComputerComponents> GetMotherboard(string gpu)
+        {
+            ComputerComponents motherboard = CompomentData.ProcessorTdpList.FirstOrDefault(p => p.Motherboard.Equals(GetMotherboard));
+
+            var GPUInfo = new ComputerComponents { Gpu = videocard.Cpu, TdpGpu = videocard.TdpCpu };
+
+            return Ok(GPUInfo);
+        }
+
         #endregion Get Components
 
         #region Calculo
 
         private int CalculateTDP(ComputerComponents computerComponents)
         {
-            int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu +
-                           computerComponents.TdpMotherboard + computerComponents.TdpSSD + 
-                           computerComponents.TdpHDD + (computerComponents.TdpRam * computerComponents.QntRam);
+            int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu + computerComponents.TdpMotherboard + 
+                           computerComponents.TdpSSD + computerComponents.TdpHDD + (computerComponents.TdpRam * computerComponents.QntRam);
             return totalTdp;
         }
 
