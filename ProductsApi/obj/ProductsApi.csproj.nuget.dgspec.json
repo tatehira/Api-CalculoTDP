@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {}
+    "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {
+    "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+        "projectUniqueName": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
         "projectName": "ProductsApi",
-        "projectPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
-        "packagesPath": "C:\\Users\\wendrew.nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Api-CalculoTDP\\ProductsApi\\obj\\",
+        "projectPath": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+        "packagesPath": "C:\\Users\\nickd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\wendrew.nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nickd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Interno-Libs-Base": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

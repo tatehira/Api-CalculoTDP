@@ -1,10 +1,10 @@
-﻿using static ProductsApi.Models.Enums;
+﻿using static ProductsApi.Models.Enums.Enums;
 
 namespace ProductsApi.Models
 {
     public static class CompomentData
     {
-        public static List<ComputerComponents> ProcessorTdpList { get; set; } = new List<ComputerComponents>
+        public static List<ComputerComponents> ComponentTdpList { get; set; } = new List<ComputerComponents>
         {
             // Lista de processadores Intel Serie I
             new ComputerComponents { Cpu = "Intel Core i9-11900K", TdpCpu = 125 },
@@ -67,16 +67,16 @@ namespace ProductsApi.Models
             new ComputerComponents { Gpu = "AMD Radeon RX 5600 XT", TdpGpu = 150 },
 
             // Lista SSDs e HD
-            new ComputerComponents { SSD = SSDType.Sata, TdpSSD = 3 },
-            new ComputerComponents { SSD = SSDType.Nvme, TdpSSD = 5 },
-            new ComputerComponents { HDD = HDDType.HDDDesktop, TdpHDD = 8 },
-            new ComputerComponents { HDD = HDDType.HDDNotebook, TdpHDD = 5 },
+            new ComputerComponents { SSD = SSDType.Sata, TdpSSDSata = 3 },
+            new ComputerComponents { SSD = SSDType.Nvme, TdpSSDNvme = 5 },
+            new ComputerComponents { HDD = HDDType.HDDDesktop, TdpHDDPC = 8 },
+            new ComputerComponents { HDD = HDDType.HDDNotebook, TdpHDDNote = 5 },
 
             //Lista de placas mãe
-            new ComputerComponents { Motherboard = "Micro ATX", TdpMotherboard = 8 },
-            new ComputerComponents { Motherboard = "Mini ITX", TdpMotherboard = 6 },
-            new ComputerComponents { Motherboard = "ATX", TdpMotherboard = 10 },
-            new ComputerComponents { Motherboard = "Extended ATX", TdpMotherboard = 12 }
+            new ComputerComponents { Motherboard = MotherboardEnum.MicroATX, TdpMotherboardMicro = 8 },
+            new ComputerComponents { Motherboard = MotherboardEnum.MiniATX, TdpMotherboardMini = 6 },
+            new ComputerComponents { Motherboard = MotherboardEnum.ATX, TdpMotherboardATX = 10 },
+            new ComputerComponents { Motherboard = MotherboardEnum.ExtendedATX, TdpMotherboardExtended = 12 }
         };
        
     }
