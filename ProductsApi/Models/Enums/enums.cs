@@ -17,7 +17,7 @@
         public enum HDDType
         {
             HDDDesktop = 0,
-            HDDNotebook = 0
+            HDDNotebook = 1
         }
 
         public enum MotherboardEnum
@@ -26,7 +26,6 @@
             MiniATX = 1,
             ATX = 2,
             ExtendedATX = 3
-
         }
     }
 }

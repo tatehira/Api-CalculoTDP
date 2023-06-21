@@ -4,7 +4,7 @@ namespace ProductsApi.Models
 {
     public static class CompomentData
     {
-        public static List<ComputerComponents> ProcessorTdpList { get; set; } = new List<ComputerComponents>
+        public static List<ComputerComponents> ComponentTdpList { get; set; } = new List<ComputerComponents>
         {
             // Lista de processadores Intel Serie I
             new ComputerComponents { Cpu = "Intel Core i9-11900K", TdpCpu = 125 },
