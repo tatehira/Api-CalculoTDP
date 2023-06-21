@@ -29,7 +29,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/computers")]
+        [Route("api/ComputersCreate")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
         {
             try
@@ -45,14 +45,14 @@ namespace ProductsApi.Controllers
 
                 return Ok(computerComponents);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Erro no processamento! ");
             }
         }
 
         [HttpPut]
-        [Route("api/computer")]
+        [Route("api/ComputerUpdate")]
         public async Task<ActionResult> UpdateComputer(ComputerComponents computerComponents)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(computerComponents.Id);
@@ -68,7 +68,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/computer")]
+        [Route("api/ComputerDelete")]
         public async Task<ActionResult> DeleteComputer(int id)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(id);
@@ -83,6 +83,23 @@ namespace ProductsApi.Controllers
             return NoContent();
         }
         #endregion CRUD
+
+        #region Lista de process e TDP
+
+        [HttpGet]
+        [Route("Api/ProcessorsTdp")]
+        public ActionResult<ComputerComponents> GetProcessador(string cpu)
+        {
+            ComputerComponents processor = CompomentData.ProcessorTdpList
+                                           .FirstOrDefault(p => p.Cpu.Equals (cpu, StringComparison.OrdinalIgnoreCase));
+
+            var processorInfo = new ComputerComponents { Cpu = processor.Cpu, TdpCpu = processor.TdpCpu };
+
+            return processorInfo;
+        }
+
+
+        #endregion Lista de process e TDP
 
         #region Regas
 
