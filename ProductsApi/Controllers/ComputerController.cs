@@ -34,10 +34,7 @@ namespace ProductsApi.Controllers
         {
             try
             {
-                int calculatedTdp = CalculateTDP(computerComponents);
-                computerComponents.TdpTotal = calculatedTdp;
-
-                Validation(computerComponents);
+                computerComponents.TdpTotal = CalculateTDP(computerComponents); ;
 
                 await _context.Computers.AddAsync(computerComponents);
 
@@ -84,8 +81,7 @@ namespace ProductsApi.Controllers
         }
         #endregion CRUD
 
-        #region Lista de process e TDP
-
+        #region Get Components
         [HttpGet]
         [Route("Api/ProcessorsTdp")]
         public ActionResult<ComputerComponents> GetProcessador(string cpu)
@@ -95,13 +91,22 @@ namespace ProductsApi.Controllers
 
             var processorInfo = new ComputerComponents { Cpu = processor.Cpu, TdpCpu = processor.TdpCpu };
 
-            return processorInfo;
+            return Ok(processorInfo);
         }
 
+        [HttpGet]
+        [Route("Api/PlacaVideoTdp")]
+        public ActionResult<ComputerComponents> GetVideoCard(string gpu)
+        {
+            ComputerComponents videocard = CompomentData.ProcessorTdpList.FirstOrDefault(p => p.Gpu.Equals(gpu, StringComparison.OrdinalIgnoreCase));
 
-        #endregion Lista de process e TDP
+            var GPUInfo = new ComputerComponents { Gpu = videocard.Cpu, TdpGpu = videocard.TdpCpu };
 
-        #region Regas
+            return Ok(GPUInfo);
+        }
+        #endregion Get Components
+
+        #region Calculo
 
         private int CalculateTDP(ComputerComponents computerComponents)
         {
@@ -111,14 +116,6 @@ namespace ProductsApi.Controllers
             return totalTdp;
         }
 
-        #endregion Regas
-
-        #region Validation
-        private void Validation(ComputerComponents computerComponents)
-        {
-            if (computerComponents.Cpu == null)
-                throw new ArgumentException("Processador obrigatório! ");
-        }
-        #endregion Validation
+        #endregion Calculo
     }
 }
