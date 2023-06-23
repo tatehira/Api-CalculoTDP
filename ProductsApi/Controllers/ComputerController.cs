@@ -35,7 +35,7 @@ namespace ProductsApi.Controllers
         {
             try
             {
-                computerComponents.TdpTotal = CalculateTDP(computerComponents); ;
+                computerComponents.TdpTotal = Calculate(computerComponents); ;
 
                 await _context.Computers.AddAsync(computerComponents);
 
@@ -120,7 +120,7 @@ namespace ProductsApi.Controllers
 
         #region Calculo
 
-        private int CalculateTDP(ComputerComponents computerComponents)
+        private int Calculate(ComputerComponents computerComponents)
         {
             int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu;
 
@@ -164,6 +164,22 @@ namespace ProductsApi.Controllers
 
             return totalTdp;
         }
+
+        [HttpPost("api/CalculateTDP")]
+        public IActionResult CalculateTDP([FromBody] ComputerComponents computerComponents)
+        {
+            try
+            {
+                int totalTdp = Calculate(computerComponents);
+
+                return Ok(new { tdpTotal = totalTdp });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Erro no processamento!");
+            }
+        }
+
 
         #endregion Calculo
     }

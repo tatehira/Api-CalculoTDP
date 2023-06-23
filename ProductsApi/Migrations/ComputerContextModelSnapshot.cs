@@ -35,11 +35,11 @@ namespace ProductsApi.Migrations
                     b.Property<string>("Gpu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HDD")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("HDD")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Motherboard")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Motherboard")
+                        .HasColumnType("int");
 
                     b.Property<int>("QntRam")
                         .HasColumnType("int");
@@ -59,16 +59,31 @@ namespace ProductsApi.Migrations
                     b.Property<int>("TdpGpu")
                         .HasColumnType("int");
 
-                    b.Property<int>("TdpHDD")
+                    b.Property<int>("TdpHDDNote")
                         .HasColumnType("int");
 
-                    b.Property<int>("TdpMotherboard")
+                    b.Property<int>("TdpHDDPC")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpMotherboardATX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpMotherboardExtended")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpMotherboardMicro")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpMotherboardMini")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpRam")
                         .HasColumnType("int");
 
-                    b.Property<int>("TdpSSD")
+                    b.Property<int>("TdpSSDNvme")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpSSDSata")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpTotal")
