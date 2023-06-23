@@ -34,6 +34,5 @@ namespace ProductsApi.Models
         public HDDType HDD { get; set; }
         public SSDType SSD { get; set; }
         public MotherboardEnum Motherboard { get; set; }
-        public RotuloCategory RotuloCategory { get; set; }
     }
 }

@@ -7,13 +7,6 @@
             Sata = 0,
             Nvme = 1,
         }
-
-        public enum RotuloCategory
-        {
-            Upgrade = 0,
-            Novo = 1,
-        }
-
         public enum HDDType
         {
             HDDDesktop = 0,
