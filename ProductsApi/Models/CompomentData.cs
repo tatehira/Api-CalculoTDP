@@ -76,7 +76,13 @@ namespace ProductsApi.Models
             new ComputerComponents { Motherboard = MotherboardEnum.MicroATX, TdpMotherboardMicro = 8 },
             new ComputerComponents { Motherboard = MotherboardEnum.MiniATX, TdpMotherboardMini = 6 },
             new ComputerComponents { Motherboard = MotherboardEnum.ATX, TdpMotherboardATX = 10 },
-            new ComputerComponents { Motherboard = MotherboardEnum.ExtendedATX, TdpMotherboardExtended = 12 }
+            new ComputerComponents { Motherboard = MotherboardEnum.ExtendedATX, TdpMotherboardExtended = 12 },
+
+            //Lista RAMs
+            new ComputerComponents { Ram = RamEnum.Single, TdpRamSingles = 8 },
+            new ComputerComponents { Ram = RamEnum.Dual, TdpRamDual = 8 },
+            new ComputerComponents { Ram = RamEnum.Tri, TdpRamTri = 8 },
+            new ComputerComponents { Ram = RamEnum.Quad, TdpRamQuad = 8 }
         };
        
     }

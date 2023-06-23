@@ -27,5 +27,13 @@
             ATX = 2,
             ExtendedATX = 3
         }
+
+        public enum RamEnum
+        {
+            Single = 0,
+            Dual = 1,
+            Tri = 2,
+            Quad = 3
+        }
     }
 }

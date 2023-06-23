@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nick\\Music\\My Projects\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {}
+    "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nick\\Music\\My Projects\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {
+    "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nick\\Music\\My Projects\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+        "projectUniqueName": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
         "projectName": "ProductsApi",
-        "projectPath": "C:\\Users\\Nick\\Music\\My Projects\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
-        "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nick\\Music\\My Projects\\Api-CalculoTDP\\ProductsApi\\obj\\",
+        "projectPath": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\ProductsApi.csproj",
+        "packagesPath": "C:\\Users\\nickd\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nickd\\OneDrive\\Documents\\API\\Api-CalculoTDP\\ProductsApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\nickd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
