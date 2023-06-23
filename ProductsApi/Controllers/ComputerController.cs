@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Data;
 using ProductsApi.Models;
 using static ProductsApi.Models.Enums.Enums;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProductsApi.Controllers
 {
@@ -10,8 +13,7 @@ namespace ProductsApi.Controllers
     [ApiController]
     public class ComputerController : ControllerBase
     {
-        #region CRUD
-        private readonly ComputerContext _context;   
+        private readonly ComputerContext _context;
 
         public ComputerController(ComputerContext context)
         {
@@ -35,17 +37,16 @@ namespace ProductsApi.Controllers
         {
             try
             {
-                computerComponents.TdpTotal = Calculate(computerComponents); ;
+                computerComponents.TdpTotal = Calculo(computerComponents);
 
                 await _context.Computers.AddAsync(computerComponents);
-
                 await _context.SaveChangesAsync();
 
                 return Ok(computerComponents);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, "Erro no processamento! ");
+                return StatusCode(500, $"Erro no processamento: {ex.Message}");
             }
         }
 
@@ -80,17 +81,15 @@ namespace ProductsApi.Controllers
 
             return NoContent();
         }
-        #endregion CRUD
 
-        #region Get Components
         [HttpGet]
         [Route("Api/ProcessorsTdp")]
         public ActionResult<ComputerComponents> GetProcessador(string cpu)
         {
             ComputerComponents processor = CompomentData.ComponentTdpList
-                                           .FirstOrDefault(p => p.Cpu.Equals (cpu, StringComparison.OrdinalIgnoreCase));
+                .FirstOrDefault(p => p.Cpu.Equals(cpu, StringComparison.OrdinalIgnoreCase));
 
-            var processorInfo = new ComputerComponents { Cpu = processor.Cpu, TdpCpu = processor.TdpCpu };
+            var processorInfo = new ComputerComponents { Cpu = processor?.Cpu, TdpCpu = processor?.TdpCpu ?? 0 };
 
             return Ok(processorInfo);
         }
@@ -101,7 +100,7 @@ namespace ProductsApi.Controllers
         {
             ComputerComponents videocard = CompomentData.ComponentTdpList.FirstOrDefault(p => p.Gpu.Equals(gpu, StringComparison.OrdinalIgnoreCase));
 
-            var GPUInfo = new ComputerComponents { Gpu = videocard.Cpu, TdpGpu = videocard.TdpCpu };
+            var GPUInfo = new ComputerComponents { Gpu = videocard?.Cpu, TdpGpu = videocard?.TdpCpu ?? 0 };
 
             return Ok(GPUInfo);
         }
@@ -114,13 +113,10 @@ namespace ProductsApi.Controllers
 
             ComputerComponents motherboardInfo = CompomentData.ComponentTdpList.FirstOrDefault(m => m.Motherboard == selectMotherboard);
 
-            return Ok(motherboardInfo);
+            return Ok(motherboardInfo?.TdpTotal ?? 0);
         }
-        #endregion Get Components
 
-        #region Calculo
-
-        private int Calculate(ComputerComponents computerComponents)
+        private int Calculo(ComputerComponents computerComponents)
         {
             int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu;
 
@@ -160,27 +156,23 @@ namespace ProductsApi.Controllers
                     break;
             }
 
-            totalTdp += computerComponents.TdpRam * computerComponents.QntRam;
+            switch (computerComponents.Ram)
+            {
+                case RamEnum.Single:
+                    totalTdp += computerComponents.TdpRamSingles;
+                    break;
+                case RamEnum.Dual:
+                    totalTdp += computerComponents.TdpRamDual;
+                    break;
+                case RamEnum.Tri:
+                    totalTdp += computerComponents.TdpRamTri;
+                    break;
+                case RamEnum.Quad:
+                    totalTdp += computerComponents.TdpRamQuad;
+                    break;
+            }
 
             return totalTdp;
         }
-
-        [HttpPost("api/CalculateTDP")]
-        public IActionResult CalculateTDP([FromBody] ComputerComponents computerComponents)
-        {
-            try
-            {
-                int totalTdp = Calculate(computerComponents);
-
-                return Ok(new { tdpTotal = totalTdp });
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Erro no processamento!");
-            }
-        }
-
-
-        #endregion Calculo
     }
 }
