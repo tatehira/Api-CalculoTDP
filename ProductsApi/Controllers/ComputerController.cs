@@ -32,7 +32,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/ComputersCreate")]
+        [Route("ComputersCreate")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
         {
             try
@@ -51,7 +51,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPut]
-        [Route("api/ComputerUpdate")]
+        [Route("ComputerUpdate")]
         public async Task<ActionResult> UpdateComputer(ComputerComponents computerComponents)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(computerComponents.Id);
@@ -67,7 +67,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/ComputerDelete")]
+        [Route("ComputerDelete")]
         public async Task<ActionResult> DeleteComputer(int id)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(id);
@@ -83,7 +83,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        [Route("Api/ProcessorsTdp")]
+        [Route("ProcessorsTdp")]
         public ActionResult<ComputerComponents> GetProcessador(string cpu)
         {
             ComputerComponents processor = CompomentData.ComponentTdpList
@@ -95,7 +95,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        [Route("Api/PlacaVideoTdp")]
+        [Route("PlacaVideoTdp")]
         public ActionResult<ComputerComponents> GetVideoCard(string gpu)
         {
             ComputerComponents videocard = CompomentData.ComponentTdpList.FirstOrDefault(p => p.Gpu.Equals(gpu, StringComparison.OrdinalIgnoreCase));
@@ -106,7 +106,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        [Route("Api/MotherboardTdp")]
+        [Route("MotherboardTdp")]
         public ActionResult<int> GetMotherboardTdp(string motherboard)
         {
             MotherboardEnum selectMotherboard = Enum.Parse<MotherboardEnum>(motherboard);

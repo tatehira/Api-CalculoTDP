@@ -11,8 +11,8 @@ using ProductsApi.Data;
 namespace ProductsApi.Migrations
 {
     [DbContext(typeof(ComputerContext))]
-    [Migration("20230623021210_frist")]
-    partial class frist
+    [Migration("20230624154537_casa")]
+    partial class casa
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,19 +44,16 @@ namespace ProductsApi.Migrations
                     b.Property<int>("Motherboard")
                         .HasColumnType("int");
 
-                    b.Property<int>("QntRam")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Ram")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RotuloCategory")
+                    b.Property<int>("Ram")
                         .HasColumnType("int");
 
                     b.Property<int>("SSD")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpCpu")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpDefault")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpGpu")
@@ -80,7 +77,16 @@ namespace ProductsApi.Migrations
                     b.Property<int>("TdpMotherboardMini")
                         .HasColumnType("int");
 
-                    b.Property<int>("TdpRam")
+                    b.Property<int>("TdpRamDual")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamQuad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamSingles")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamTri")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpSSDNvme")

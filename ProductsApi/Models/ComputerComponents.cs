@@ -15,15 +15,20 @@ namespace ProductsApi.Models
         // TDPs
         public int TdpCpu { get; set; }
         public int TdpGpu { get; set; }
+
         public int TdpRamSingles { get; set; }
         public int TdpRamDual { get; set; }
         public int TdpRamTri { get; set; }
         public int TdpRamQuad { get; set; }
+
         public int TdpHDDPC { get; set; }
         public int TdpHDDNote { get; set; }
         public int TdpSSDSata { get; set; }
         public int TdpSSDNvme { get; set; }
+
+        public int TdpDefault { get; set; }
         public int TdpTotal { get; set; }
+
         public int TdpMotherboardMini { get; set; }
         public int TdpMotherboardMicro { get; set; }
         public int TdpMotherboardATX { get; set; }

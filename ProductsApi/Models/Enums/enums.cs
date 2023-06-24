@@ -4,29 +4,33 @@
     {
         public enum SSDType
         {
-            Sata = 0,
-            Nvme = 1,
+            Default = 0,
+            Sata = 1,
+            Nvme = 2
         }
         public enum HDDType
         {
-            HDDDesktop = 0,
-            HDDNotebook = 1
+            Default = 0,
+            HDDDesktop = 2,
+            HDDNotebook = 3
         }
 
         public enum MotherboardEnum
         {
-            MicroATX = 0,
-            MiniATX = 1,
-            ATX = 2,
-            ExtendedATX = 3
+            Default = 0,
+            MicroATX = 1,
+            MiniATX = 2,
+            ATX = 3,
+            ExtendedATX = 4
         }
 
         public enum RamEnum
         {
-            Single = 0,
-            Dual = 1,
-            Tri = 2,
-            Quad = 3
+            Default = 0,
+            Single = 1,
+            Dual = 2,
+            Tri = 3,
+            Quad = 4
         }
     }
 }
