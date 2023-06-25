@@ -35,17 +35,17 @@ namespace ProductsApi.Migrations
                     b.Property<string>("Gpu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HDD")
-                        .HasColumnType("int");
+                    b.Property<string>("HDD")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Motherboard")
-                        .HasColumnType("int");
+                    b.Property<string>("Motherboard")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Ram")
-                        .HasColumnType("int");
+                    b.Property<string>("Ram")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SSD")
-                        .HasColumnType("int");
+                    b.Property<string>("SSD")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TdpCpu")
                         .HasColumnType("int");

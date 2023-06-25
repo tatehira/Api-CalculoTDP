@@ -11,8 +11,8 @@ using ProductsApi.Data;
 namespace ProductsApi.Migrations
 {
     [DbContext(typeof(ComputerContext))]
-    [Migration("20230624154537_casa")]
-    partial class casa
+    [Migration("20230625061524_new")]
+    partial class @new
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,17 +38,17 @@ namespace ProductsApi.Migrations
                     b.Property<string>("Gpu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HDD")
-                        .HasColumnType("int");
+                    b.Property<string>("HDD")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Motherboard")
-                        .HasColumnType("int");
+                    b.Property<string>("Motherboard")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Ram")
-                        .HasColumnType("int");
+                    b.Property<string>("Ram")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SSD")
-                        .HasColumnType("int");
+                    b.Property<string>("SSD")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TdpCpu")
                         .HasColumnType("int");
