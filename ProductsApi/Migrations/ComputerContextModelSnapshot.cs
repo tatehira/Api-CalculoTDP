@@ -35,25 +35,22 @@ namespace ProductsApi.Migrations
                     b.Property<string>("Gpu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HDD")
-                        .HasColumnType("int");
+                    b.Property<string>("HDD")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Motherboard")
-                        .HasColumnType("int");
-
-                    b.Property<int>("QntRam")
-                        .HasColumnType("int");
+                    b.Property<string>("Motherboard")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Ram")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RotuloCategory")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SSD")
-                        .HasColumnType("int");
+                    b.Property<string>("SSD")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TdpCpu")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpDefault")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpGpu")
@@ -77,7 +74,16 @@ namespace ProductsApi.Migrations
                     b.Property<int>("TdpMotherboardMini")
                         .HasColumnType("int");
 
-                    b.Property<int>("TdpRam")
+                    b.Property<int>("TdpRamDual")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamQuad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamSingles")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TdpRamTri")
                         .HasColumnType("int");
 
                     b.Property<int>("TdpSSDNvme")

@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Data;
 using ProductsApi.Models;
-using static ProductsApi.Models.Enums.Enums;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProductsApi.Controllers
 {
@@ -32,11 +28,16 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/ComputersCreate")]
+        [Route("ComputersCreate")]
         public async Task<IActionResult> CreateComputer(ComputerComponents computerComponents)
         {
             try
             {
+                foreach (var component in CompomentData.ComponentTdpList)
+                {
+                    
+                }
+
                 computerComponents.TdpTotal = Calculo(computerComponents);
 
                 await _context.Computers.AddAsync(computerComponents);
@@ -51,7 +52,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPut]
-        [Route("api/ComputerUpdate")]
+        [Route("ComputerUpdate")]
         public async Task<ActionResult> UpdateComputer(ComputerComponents computerComponents)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(computerComponents.Id);
@@ -67,7 +68,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpDelete]
-        [Route("api/ComputerDelete")]
+        [Route("ComputerDelete")]
         public async Task<ActionResult> DeleteComputer(int id)
         {
             ComputerComponents dbComputer = await _context.Computers.FindAsync(id);
@@ -83,7 +84,7 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        [Route("Api/ProcessorsTdp")]
+        [Route("ProcessorsTdp")]
         public ActionResult<ComputerComponents> GetProcessador(string cpu)
         {
             ComputerComponents processor = CompomentData.ComponentTdpList
@@ -94,80 +95,70 @@ namespace ProductsApi.Controllers
             return Ok(processorInfo);
         }
 
-        [HttpGet]
-        [Route("Api/PlacaVideoTdp")]
-        public ActionResult<ComputerComponents> GetVideoCard(string gpu)
-        {
-            ComputerComponents videocard = CompomentData.ComponentTdpList.FirstOrDefault(p => p.Gpu.Equals(gpu, StringComparison.OrdinalIgnoreCase));
-
-            var GPUInfo = new ComputerComponents { Gpu = videocard?.Cpu, TdpGpu = videocard?.TdpCpu ?? 0 };
-
-            return Ok(GPUInfo);
-        }
-
-        [HttpGet]
-        [Route("Api/MotherboardTdp")]
-        public ActionResult<int> GetMotherboardTdp(string motherboard)
-        {
-            MotherboardEnum selectMotherboard = Enum.Parse<MotherboardEnum>(motherboard);
-
-            ComputerComponents motherboardInfo = CompomentData.ComponentTdpList.FirstOrDefault(m => m.Motherboard == selectMotherboard);
-
-            return Ok(motherboardInfo?.TdpTotal ?? 0);
-        }
-
         private int Calculo(ComputerComponents computerComponents)
         {
             int totalTdp = computerComponents.TdpCpu + computerComponents.TdpGpu;
 
             switch (computerComponents.SSD)
             {
-                case SSDType.Sata:
+                case "Default":
+                    totalTdp += computerComponents.TdpDefault;
+                    break;
+                case "Sata":
                     totalTdp += computerComponents.TdpSSDSata;
                     break;
-                case SSDType.Nvme:
+                case "NVME":
                     totalTdp += computerComponents.TdpSSDNvme;
                     break;
             }
 
             switch (computerComponents.HDD)
             {
-                case HDDType.HDDDesktop:
+                case "Default":
+                    totalTdp += computerComponents.TdpDefault;
+                    break;
+                case "HDD Desktop":
                     totalTdp += computerComponents.TdpHDDPC;
                     break;
-                case HDDType.HDDNotebook:
+                case "HDD Notebook":
                     totalTdp += computerComponents.TdpHDDNote;
                     break;
             }
 
             switch (computerComponents.Motherboard)
             {
-                case MotherboardEnum.MicroATX:
+                case "Default":
+                    totalTdp += computerComponents.TdpDefault;
+                    break;
+                case "Micro ATX":
                     totalTdp += computerComponents.TdpMotherboardMicro;
                     break;
-                case MotherboardEnum.MiniATX:
+                case "Mini ATX":
                     totalTdp += computerComponents.TdpMotherboardMini;
                     break;
-                case MotherboardEnum.ATX:
+                case "ATX":
                     totalTdp += computerComponents.TdpMotherboardATX;
                     break;
-                case MotherboardEnum.ExtendedATX:
+                case "Externded":
                     totalTdp += computerComponents.TdpMotherboardExtended;
                     break;
             }
 
             switch (computerComponents.Ram)
             {
-                case RamEnum.Single:
+                case "Default":
+                    totalTdp += computerComponents.TdpDefault;
+                    break;  
+                case "Single Channel":
                     totalTdp += computerComponents.TdpRamSingles;
                     break;
-                case RamEnum.Dual:
+                case "Dual Channel":
                     totalTdp += computerComponents.TdpRamDual;
                     break;
-                case RamEnum.Tri:
+                case "Tri Channel":
                     totalTdp += computerComponents.TdpRamTri;
                     break;
-                case RamEnum.Quad:
+                case "Quad Channel":
                     totalTdp += computerComponents.TdpRamQuad;
                     break;
             }

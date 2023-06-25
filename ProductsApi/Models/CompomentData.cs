@@ -1,6 +1,4 @@
-﻿using static ProductsApi.Models.Enums.Enums;
-
-namespace ProductsApi.Models
+﻿namespace ProductsApi.Models
 {
     public static class CompomentData
     {
@@ -67,22 +65,27 @@ namespace ProductsApi.Models
             new ComputerComponents { Gpu = "AMD Radeon RX 5600 XT", TdpGpu = 150 },
 
             // Lista SSDs e HD
-            new ComputerComponents { SSD = SSDType.Sata, TdpSSDSata = 3 },
-            new ComputerComponents { SSD = SSDType.Nvme, TdpSSDNvme = 5 },
-            new ComputerComponents { HDD = HDDType.HDDDesktop, TdpHDDPC = 8 },
-            new ComputerComponents { HDD = HDDType.HDDNotebook, TdpHDDNote = 5 },
+            new ComputerComponents { SSD = "Default", TdpDefault = 0 },
+            new ComputerComponents { SSD = "Sata", TdpSSDSata = 3 },
+            new ComputerComponents { SSD = "NVME", TdpSSDNvme = 5 },
+
+            new ComputerComponents { HDD = "Default", TdpDefault = 0 },
+            new ComputerComponents { HDD = "HDD Desktop", TdpHDDPC = 8 },
+            new ComputerComponents { HDD = "HDD Notebook", TdpHDDNote = 5 },
 
             //Lista de placas mãe
-            new ComputerComponents { Motherboard = MotherboardEnum.MicroATX, TdpMotherboardMicro = 8 },
-            new ComputerComponents { Motherboard = MotherboardEnum.MiniATX, TdpMotherboardMini = 6 },
-            new ComputerComponents { Motherboard = MotherboardEnum.ATX, TdpMotherboardATX = 10 },
-            new ComputerComponents { Motherboard = MotherboardEnum.ExtendedATX, TdpMotherboardExtended = 12 },
+            new ComputerComponents { Motherboard = "Default", TdpDefault = 0 },
+            new ComputerComponents { Motherboard = "Micro ATX", TdpMotherboardMicro = 8 },
+            new ComputerComponents { Motherboard = "Mini ATX", TdpMotherboardMini = 6 },
+            new ComputerComponents { Motherboard = "ATX", TdpMotherboardATX = 10 },
+            new ComputerComponents { Motherboard = "Externded", TdpMotherboardExtended = 12 },
 
             //Lista RAMs
-            new ComputerComponents { Ram = RamEnum.Single, TdpRamSingles = 8 },
-            new ComputerComponents { Ram = RamEnum.Dual, TdpRamDual = 8 },
-            new ComputerComponents { Ram = RamEnum.Tri, TdpRamTri = 8 },
-            new ComputerComponents { Ram = RamEnum.Quad, TdpRamQuad = 8 }
+            new ComputerComponents { Ram = "Default", TdpDefault = 0 },
+            new ComputerComponents { Ram = "Single Channel", TdpRamSingles = 8 },
+            new ComputerComponents { Ram = "Dual Channel", TdpRamDual = 8 },
+            new ComputerComponents { Ram = "Tri Channel", TdpRamTri = 8 },
+            new ComputerComponents { Ram = "Quad Channel", TdpRamQuad = 8 }
         };
        
     }
