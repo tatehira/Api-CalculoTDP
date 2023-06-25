@@ -33,6 +33,11 @@ namespace ProductsApi.Controllers
         {
             try
             {
+                foreach (var component in CompomentData.ComponentTdpList)
+                {
+                    
+                }
+
                 computerComponents.TdpTotal = Calculo(computerComponents);
 
                 await _context.Computers.AddAsync(computerComponents);
