@@ -80,7 +80,10 @@ namespace ProductsApi.Controllers
 
         private int Calculo(ComputerComponents computerComponents)
         {
-            int totalTdp = GetTdpValue(computerComponents.Cpu) + GetTdpValue(computerComponents.Gpu);
+            int totalTdp = GetTdpCpu(computerComponents.Cpu);
+            int calcGPU = GetTdpGPU(computerComponents.Gpu);
+
+            totalTdp += calcGPU;
 
             switch (computerComponents.SSD)
             {
@@ -136,20 +139,20 @@ namespace ProductsApi.Controllers
                     totalTdp += 8;
                     break;
                 case "Dual-Channel":
-                    totalTdp += 8;
+                    totalTdp += 16;
                     break;
                 case "Tri-Channel":
-                    totalTdp += 8;
+                    totalTdp += 24;
                     break;
                 case "Quad-Channel":
-                    totalTdp += 8;
+                    totalTdp += 32;
                     break;
             }
 
             return totalTdp;
         }
 
-        private int GetTdpValue(string component)
+        private int GetTdpCpu(string component)
         {
             switch (component)
             {
@@ -189,6 +192,15 @@ namespace ProductsApi.Controllers
                 case "AMD Ryzen 7 2700X":
                     return 95;
 
+                default:
+                    return 0;
+            }
+        }
+
+        private int GetTdpGPU(string component)
+        {
+            switch (component)
+            {
                 // Placas de vídeo Nvidia
                 case "Nvidia GeForce RTX 3090":
                 case "Nvidia GeForce RTX 3080":
