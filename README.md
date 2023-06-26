@@ -21,3 +21,19 @@ O cálculo do TDP é uma etapa importante no projeto e na escolha de componentes
 4. **Seleção e compatibilidade de componentes:** Conhecer o TDP de um componente é fundamental para selecionar e combinar componentes eletrônicos de forma adequada, evitando sobrecargas térmicas e garantindo a compatibilidade entre eles.
 
 Não deixe de conferir o frontend correspondente a este backend para realizar os cálculos de TDP de forma intuitiva e fácil de usar. Clique [aqui](https://github.com/tatehira/Front-CalculoTDP) para acessar o frontend.
+
+## API
+
+A API fornecida pelo backend retorna um JSON com as seguintes propriedades:
+
+```json
+{
+  "Cpu": "Processador 1",
+  "Gpu": "Placa de vídeo 1",
+  "Ram": "Memória RAM 1",
+  "HDD": "Armazenamento HDD 1",
+  "SSD": "Armazenamento SSD 1",
+  "Motherboard": "Placa-mãe 1",
+  "TdpDefault": 0,
+  "TdpTotal": 100
+}
