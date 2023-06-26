@@ -26,15 +26,15 @@ Não deixe de conferir o frontend correspondente a este backend para realizar os
 
 A API fornecida pelo backend retorna um JSON com as seguintes propriedades:
 
-    const data = {
-      cpu: processador,
-      gpu: placaVideo,
-      tdpCpu: 0,
-      tdpGpu: 0,
-      ram: ram,
-      hdd: hd,
-      ssd: ssd,
-      motherboard: placaMae,
-      tdpDefault: 0,
-      tdpTotal: 0
-    };
+  ```json
+{
+  "Id": 1,
+  "Cpu": "Processador 1",
+  "Gpu": "Placa de vídeo 1",
+  "Ram": "Memória RAM 1",
+  "HDD": "Armazenamento HDD 1",
+  "SSD": "Armazenamento SSD 1",
+  "Motherboard": "Placa-mãe 1",
+  "TdpDefault": 0,
+  "TdpTotal": 100
+}
