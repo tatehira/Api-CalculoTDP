@@ -7,7 +7,7 @@ using ProductsApi.Data;
 
 #nullable disable
 
-namespace ProductsApi.Migrations
+namespace CalculoTDP.Migrations
 {
     [DbContext(typeof(ComputerContext))]
     partial class ComputerContextModelSnapshot : ModelSnapshot

@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace ProductsApi.Migrations
+namespace CalculoTDP.Migrations
 {
     /// <inheritdoc />
-    public partial class removidoprops : Migration
+    public partial class LBR : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -8,11 +8,11 @@ using ProductsApi.Data;
 
 #nullable disable
 
-namespace ProductsApi.Migrations
+namespace CalculoTDP.Migrations
 {
     [DbContext(typeof(ComputerContext))]
-    [Migration("20230625160122_removido-props")]
-    partial class removidoprops
+    [Migration("20230626133355_LBR")]
+    partial class LBR
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
