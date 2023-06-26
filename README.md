@@ -2,11 +2,11 @@
 
 ## Descrição
 
-Este repositório contém o código do backend para o projeto CalculoTDP, que está relacionado ao cálculo de TDP (Thermal Design Power) de componentes eletrônicos. O TDP é uma medida da quantidade de energia térmica que um dispositivo eletrônico produz quando está em pleno funcionamento. O cálculo do TDP é essencial para garantir que os componentes eletrônicos estejam operando dentro de limites seguros de temperatura.
+Este repositório contém o código do backend para o projeto CalculoTDP, que está relacionado ao cálculo de TDP (Thermal Design Power) de componentes desktop. O TDP é uma medida da quantidade de energia térmica que um dispositivo eletrônico produz quando está em pleno funcionamento. O cálculo do TDP é essencial para garantir que os componentes eletrônicos estejam operando dentro de limites seguros de temperatura.
 
 ## Frontend
 
-O frontend correspondente a este backend pode ser encontrado no seguinte repositório: [Front-CalculoTDP](https://github.com/tatehira/Front-CalculoTDP). O frontend é responsável por fornecer a interface gráfica para que os usuários possam inserir os dados necessários para o cálculo do TDP, e em seguida, enviar esses dados para o backend realizar os cálculos.
+O frontend que correspondente a este backend pode ser encontrado no seguinte repositório: [Front-CalculoTDP](https://github.com/tatehira/Front-CalculoTDP). O frontend é responsável por fornecer a interface gráfica para que os usuários possam inserir os dados necessários para o cálculo do TDP, e em seguida, enviar esses dados para o backend realizar os cálculos.
 
 ## Por que calcular o TDP?
 
