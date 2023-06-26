@@ -26,15 +26,4 @@ Não deixe de conferir o frontend correspondente a este backend para realizar os
 
 A API fornecida pelo backend retorna um JSON com as seguintes propriedades:
 
-  ```json
-{
-  "Id": 1,
-  "Cpu": "Processador 1",
-  "Gpu": "Placa de vídeo 1",
-  "Ram": "Memória RAM 1",
-  "HDD": "Armazenamento HDD 1",
-  "SSD": "Armazenamento SSD 1",
-  "Motherboard": "Placa-mãe 1",
-  "TdpDefault": 0,
-  "TdpTotal": 100
-}
+![image](https://github.com/tatehira/Api-CalculoTDP/assets/68212041/f1aeb222-7314-4db5-9afd-3d2322950140)
