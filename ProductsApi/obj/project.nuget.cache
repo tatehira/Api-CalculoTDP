@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PNqIqU2dlKOXvWoV0nwoF1/HHSIGY/Q0XP2nANes2uHXTa4ZJuL7O7/cHT7oa2GI053aVyjpbIYylhDtZlcOiA==",
+  "dgSpecHash": "g+53Hdg6tFQZQZS7DrP4eBnYYnLKrbo918vCULUQ2zAwkPMUpdAfIyJy/O+f6SkNa12bf09OWyNkubJXkP4NXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
+  "projectFilePath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\CalculoTDP\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wendrew.nick\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\wendrew.nick\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

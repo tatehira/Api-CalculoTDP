@@ -4094,11 +4094,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
+      "projectUniqueName": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\CalculoTDP\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
       "projectName": "CalculoTDP",
-      "projectPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
+      "projectPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\CalculoTDP\\Api-CalculoTDP\\ProductsApi\\CalculoTDP.csproj",
       "packagesPath": "C:\\Users\\wendrew.nick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\Api-CalculoTDP\\ProductsApi\\obj\\",
+      "outputPath": "C:\\Users\\wendrew.nick\\Documents\\Projetos\\Nick\\CalculoTDP\\Api-CalculoTDP\\ProductsApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wendrew.nick\\AppData\\Roaming\\NuGet\\NuGet.Config",
